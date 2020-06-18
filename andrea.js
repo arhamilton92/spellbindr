@@ -33,13 +33,6 @@ $.ajax({
 }).then(function(response) {
     console.log(response);
 })
-
-$.ajax({
-    url: pickupLineURL,
-    method: "GET"
-}).then(function(response) {
-    console.log(response);
-})
 //
 
 //FUNCTION DEFINITIONS
@@ -80,7 +73,6 @@ function generateStats() {
             spell2 = response.results[index2].name;
             generateCharacter();
             })
-
     })
 }
 
@@ -93,7 +85,16 @@ function generateCharacter() {
     console.log("spells:");
     console.log(spell1);
     console.log(spell2);
+    generatePickupLine();
 }
 
+function generatePickupLine() {
+    $.ajax({
+        url: pickupLineURL,
+        method: "GET"
+    }).then(function(response) {
+        console.log(response.tweet)
+    })
+}
 //FUNCTION CALLS
 generateName();
