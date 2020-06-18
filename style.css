@@ -17,3 +17,10 @@ button{
     width:150px;
   
 }
+#user-page{
+    text-align: center;
+}
+#game-page{
+    text-align: center;
+    margin-top: 40px;
+}

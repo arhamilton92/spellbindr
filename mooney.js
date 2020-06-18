@@ -2,6 +2,10 @@
 //then I am presented with a roll button to create my character
     //SpellBindr logo, brief description, and start button 
     //On click, page is wiped and first character profile is created
+    $("#start-button").click(function(){
+        $("#home-page").empty()
+        console.log("You clicked start!")
+    })
         
 
 //when a character is created
