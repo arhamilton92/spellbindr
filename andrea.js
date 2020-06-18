@@ -29,12 +29,16 @@ $.ajax({
 })
 
 function generateName() {
+    // console.log("generateName")
     firstName = firstnameArray[Math.floor(Math.random() * firstnameArray.length)];
     lastName = lastnameArray[Math.floor(Math.random() * lastnameArray.length)];
     console.log(firstName, lastName);
+    $("#user-stats").append(firstName);
+    
 }
 
 function generateStats() {
+    // console.log("generateStats")
     $.ajax({
         url: magicSchoolsURL,
         method: "GET"
@@ -44,5 +48,5 @@ function generateStats() {
 
 }
 
-generateName();
-generateStats();
+// generateName();
+// generateStats();
