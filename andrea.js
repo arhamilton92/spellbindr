@@ -1,4 +1,5 @@
 queryURL = "https://www.dnd5eapi.co/api/";
+magicSchoolsURL = "https://www.dnd5eapi.co/api/magic-schools";
 pickupLineURL = "http://pebble-pickup.herokuapp.com/tweets/random"
 
 var firstnameArray = [
@@ -27,3 +28,21 @@ $.ajax({
     console.log(response);
 })
 
+function generateName() {
+    firstName = firstnameArray[Math.floor(Math.random() * firstnameArray.length)];
+    lastName = lastnameArray[Math.floor(Math.random() * lastnameArray.length)];
+    console.log(firstName, lastName);
+}
+
+function generateStats() {
+    $.ajax({
+        url: magicSchoolsURL,
+        method: "GET"
+    }).then(function(response) {
+        console.log(response);
+    })
+
+}
+
+generateName();
+generateStats();
