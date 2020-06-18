@@ -33,8 +33,8 @@ function generateName() {
     firstName = firstnameArray[Math.floor(Math.random() * firstnameArray.length)];
     lastName = lastnameArray[Math.floor(Math.random() * lastnameArray.length)];
     console.log(firstName, lastName);
-    $("#user-stats").append(firstName);
-    
+    $("#user-stats").append(firstName + " " + lastName);
+
 }
 
 function generateStats() {
