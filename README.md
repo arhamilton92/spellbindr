@@ -2,12 +2,12 @@
 
 Title: Spellbindr
 
-Description: Create your character and meet hot wizards near you. Roll a charisma check for a chance to party up and quest together.
+Description: Create a randomized character using the D&D API. Match your new character against powerful wizards for a chance at a mythical relationship. Learn some of the basics of D&D gaming in short, sessionable bursts. 
 
 User Story:
-  As a lonely adventurer; 
-  I want to find other players nearby;
-  So that I can match my characteristics against theirs for a chance to adventure together
+  As a lonely aspiring adventurer; 
+  I want to create a random character and learn about basic D&D mechanics;
+  So that I can match my new character against others for a chance to adventure together.
 
 API's: D&D
        Random pickup line
