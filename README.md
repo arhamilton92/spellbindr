@@ -2,6 +2,12 @@
 
 Title: Spellbindr
 
+
+
+![Wireframe](assets/wireframeV2.png "Wireframe v2")
+
+
+
 Description: Create a randomized character using the D&D API. Match your new character against powerful wizards for a chance at a mythical relationship. Learn some of the basics of D&D gaming in short, sessionable bursts. 
 
 User Story:
