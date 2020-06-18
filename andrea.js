@@ -44,12 +44,19 @@ $.ajax({
 
 //FUNCTION DEFINITIONS
 function generateName() {
+    // console.log("generateName")
     firstName = firstnameArray[Math.floor(Math.random() * firstnameArray.length)];
     lastName = lastnameArray[Math.floor(Math.random() * lastnameArray.length)];
+
     generateStats();
+
+    console.log(firstName, lastName);
+    $("#user-stats").append(firstName);
+
 }
 
 function generateStats() {
+    // console.log("generateStats")
     $.ajax({
         url: magicSchoolsURL,
         method: "GET"
@@ -95,5 +102,10 @@ function generateCharacter() {
     console.log(spell2);
 }
 
+
 //FUNCTION CALLS
 generateName();
+
+// generateName();
+// generateStats();
+
