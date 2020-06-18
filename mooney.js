@@ -19,6 +19,7 @@
 //then I can reroll for a new random profile
     //reroll button clears previous stats and generates new
     $("#new-button").click(function(){
+        console.log("You clicked new character!")
         $("#user-stats").empty();
 
         generateName();
