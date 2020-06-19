@@ -2,10 +2,15 @@
 //then I am presented with a roll button to create my character
     //SpellBindr logo, brief description, and start button 
     //On click, page is wiped and first character profile is created
-    $("#start-button").click(function(){
-        $("#home-page").empty()
-        console.log("You clicked start!")
-    })
+    // $("#start-button").click(function(){
+    //     console.log("You clicked start!");
+    //     $("#home-page").empty();
+    //     generateName();
+    //     generateStats();
+        
+        
+     
+    // })
         
 
 //when a character is created
@@ -13,6 +18,12 @@
     //pulled data will be appended to to page
 //then I can reroll for a new random profile
     //reroll button clears previous stats and generates new
+    // $("#new-button").click(function(){
+    //     $("#user-stats").empty();
+
+    //     generateName();
+    //     generateStats();
+    // })
 
 //when I am happy with the character stats created
 //then I can save that character to local storage
