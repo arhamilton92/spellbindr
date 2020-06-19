@@ -174,14 +174,14 @@ $(document).ready(function () {
     generatePickupLine();
 
     var nameDiv = $("<h4>").text(firstName + " " + lastName);
-    var magicDiv = $("<div>").text("magic school: " + magicSchool);
-    var equipmentDiv = $("<div>").text("Equipment:");
-    var equip1El = $("<div>").text(equipment1);
-    var equip2El = $("<div>").text(equipment2);
+    var magicDiv = $("<div>").text("Magic school: " + magicSchool);
+    var equipmentDiv = $("<div>").text("Equipment: ");
+    var equip1El = $("<span>").text(equipment1);
+    var equip2El = $("<span>").text(equipment2);
     equipmentDiv.append(equip1El, equip2El);
-    var spellDiv = $("<div>").text("Spells:");
-    var spell1El = $("<div>").text(spell1);
-    var spell2El = $("<div>").text(spell2);
+    var spellDiv = $("<div>").text("Spells: ");
+    var spell1El = $("<span>").text(spell1);
+    var spell2El = $("<span>").text(spell2);
     spellDiv.append(spell1El, spell2El);
 
     $("#user-stats").append(nameDiv, magicDiv, equipmentDiv, spellDiv);
