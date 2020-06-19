@@ -148,16 +148,7 @@ $(document).ready(function(){
         $("#play-button").attr("style", "display: none");
     }
 
-    //FUNCTION CALLS
-    hideStart();
-
-
-    $("#new-button").click(function(){
-        console.log("You clicked new character!")
-        $("#user-stats").empty();
-        generateName();
-        $("#play-button").attr("style", "display: initial");
-
+    function generatePicture () {
         $("#user-image").empty();
         var imageLength = imagearray.length;
 
@@ -171,6 +162,18 @@ $(document).ready(function(){
         imgDiv.append(image);
 
         $("#user-image").prepend(imgDiv);
+    }
+
+    //FUNCTION CALLS
+    hideStart();
+
+    $("#new-button").click(function(){
+        console.log("You clicked new character!")
+        $("#user-stats").empty();
+        generatePicture();
+        generateName();
+        $("#play-button").attr("style", "display: initial");
+
     })
 
 })
