@@ -1,30 +1,41 @@
 *{
 
-font-family: 'Amatic SC', cursive;
-}
-#home-page{
-    text-align: center;
-    margin-top: 40px;
-}
-h1{
-    font-size: 90px;
-}
-p{
-    font-size:40px;
-}
-button{
-    height:50px;
-    width:150px;
-  
-}
-#user-page{
-    text-align: center;
-}
-#game-page{
-    text-align: center;
-    margin-top: 40px;
-}
-#saved-page{
-    text-align:center;
-    margin-top: 40px;
-}
+    font-family: 'Amatic SC', cursive;
+    }
+    
+    #home-page{
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+    h1{
+        font-size: 90px;
+    }
+    
+    p{
+        font-size:40px;
+    }
+    
+    button{
+        height:50px;
+        width:150px;
+      
+    }
+    
+    #user-page{
+        text-align: center;
+    }
+    
+    #game-page{
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+    #saved-page{
+        text-align:center;
+        margin-top: 40px;
+    }
+    
+    #play-button{
+        display: none;
+    }
