@@ -227,8 +227,21 @@ $(document).ready(function () {
   //play game button to go to next page and save character to local
   $("#play-button").click(function(){
       console.log("you clicked play game")
-      window.location.assign("gameplay.html")
+      $("#user-page").empty()
+      $("#game-page").attr("style", "display: block")
+      $("#save-page").attr("style", "display: block")
+      $("#dungeon-date").attr("style", "display: block")
+
 
 
   })
+  //Flee button
+  $("#flee-button").click(function(){
+      console.log("you coward!")
+  })
+  //Yes button
+  $("#yes-button").click(function(){
+    console.log("He said YES!!")
+})
+
 });
