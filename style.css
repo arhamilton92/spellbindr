@@ -39,4 +39,6 @@ button{
 #play-button{
     display: none;
 }
-
+.button5{
+    border-radius: 50%;
+}
