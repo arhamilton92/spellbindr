@@ -53,17 +53,3 @@ $("#new-button").click(function () {
 
     $("#user-image").prepend(imgDiv);
 })
-// start page image
-var imageLength = imagearray.length;
-
-var randomimage = Math.floor(Math.random() * imageLength);
-
-var imgDiv = $("<div>");
-var image = $("<img>");
-
-image.attr("src", imagearray[randomimage]);
-
-imgDiv.append(image);
-
-$("#user-image").prepend(imgDiv);
-//

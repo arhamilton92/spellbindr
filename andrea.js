@@ -32,7 +32,7 @@ $(document).ready(function(){
     //on.click functions
     $("#start-button").click(function(){
         console.log("You clicked start!");
-        $("#home-page").empty();   
+        $("#home-page").empty();
         generateName();
     })
 
