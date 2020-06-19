@@ -5,7 +5,12 @@
     // $("#start-button").click(function(){
     //     console.log("You clicked start!");
     //     $("#home-page").empty();
+<<<<<<< HEAD
     //     generateCharacter()
+=======
+    //     generateName();
+    //     generateStats();
+>>>>>>> 0a726f738cc2c366633444c2f1788b62acb517f3
         
         
      
@@ -18,7 +23,10 @@
 //then I can reroll for a new random profile
     //reroll button clears previous stats and generates new
     // $("#new-button").click(function(){
+<<<<<<< HEAD
     //     console.log("You clicked new character!")
+=======
+>>>>>>> 0a726f738cc2c366633444c2f1788b62acb517f3
     //     $("#user-stats").empty();
 
     //     generateName();
