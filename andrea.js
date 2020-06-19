@@ -30,19 +30,18 @@ $(document).ready(function(){
     ]
 
     //on.click functions
-    $("#start-button").click(function(){
-        console.log("You clicked start!");
-        $("#home-page").empty();   
-        generateName();
-    })
+    // $("#start-button").click(function(){
+    //     console.log("You clicked start!");
+    //     $("#home-page").empty();   
+    //     generateName();
+    // })
 
     $("#new-button").click(function(){
         console.log("You clicked new character!")
         $("#user-stats").empty();
         generateName();
-
+        $("#play-button").attr("style", "display: initial");
     })
-
 
 
     //TEMPORARY
@@ -54,6 +53,8 @@ $(document).ready(function(){
     })
     //
 
+
+
     //FUNCTION DEFINITIONS
     function generateName() {
         // console.log("generateName")
@@ -61,7 +62,6 @@ $(document).ready(function(){
         lastName = lastnameArray[Math.floor(Math.random() * lastnameArray.length)];
         
         console.log(firstName, lastName);
-
         generateStats();
         
     }
@@ -103,7 +103,6 @@ $(document).ready(function(){
 
     function generateCharacter() {
         console.log(firstName, lastName);
-
         console.log("Magic school: " + magicSchool);
         console.log("equipment:");
         console.log(equipment1);
@@ -125,8 +124,6 @@ $(document).ready(function(){
             spellDiv.append(spell1El, spell2El)
         
         $("#user-stats").append(nameDiv, magicDiv, equipmentDiv, spellDiv);
-
-
     }
 
     function generatePickupLine() {
@@ -138,6 +135,11 @@ $(document).ready(function(){
         })
     }
 
+    function hideStart() {
+        $("#play-button").attr("style", "display: none");
+    }
+
     //FUNCTION CALLS
+hideStart();
 
 })
