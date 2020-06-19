@@ -24,9 +24,9 @@ var imagearray = ["https://cdn.pixabay.com/photo/2019/08/19/23/27/wizard-4417430
 // start
 $("button", "#start-button").on("click", function () {
     // $("#user-image").empty();
-    var x = imagearray.length;
+    var imageLength = imagearray.length;
 
-    var randomimage = Math.floor(Math.random() * x);
+    var randomimage = Math.floor(Math.random() * imageLength);
 
     var imgDiv = $("<div>");
     var image = $("<img>");
@@ -40,9 +40,9 @@ $("button", "#start-button").on("click", function () {
 // new char
 $("#new-button").click(function () {
     $("#user-image").empty();
-    var x = imagearray.length;
+    var imageLength = imagearray.length;
 
-    var randomimage = Math.floor(Math.random() * x);
+    var randomimage = Math.floor(Math.random() * imageLength);
 
     var imgDiv = $("<div>");
     var image = $("<img>");
@@ -54,9 +54,9 @@ $("#new-button").click(function () {
     $("#user-image").prepend(imgDiv);
 })
 // start page image
-var x = imagearray.length;
+var imageLength = imagearray.length;
 
-var randomimage = Math.floor(Math.random() * x);
+var randomimage = Math.floor(Math.random() * imageLength);
 
 var imgDiv = $("<div>");
 var image = $("<img>");
