@@ -38,7 +38,7 @@ $("button", "#start-button").on("click", function () {
     $("#wizard-image").prepend(imgDiv);
 })
 // new char
-$("button", "#new-button").on("click", function () {
+$("#new-button").click(function () {
     $("#user-image").empty();
     var x = imagearray.length;
 
@@ -51,7 +51,7 @@ $("button", "#new-button").on("click", function () {
 
     imgDiv.append(image);
 
-    $("#user-image").append(imgDiv);
+    $("#user-image").prepend(imgDiv);
 })
 // start page image
 var x = imagearray.length;
