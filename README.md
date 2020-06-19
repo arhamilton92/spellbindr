@@ -2,7 +2,7 @@
 
 Title: Spellbindr
 
-
+[Deployed Website](https://arhamilton92.github.io/spellbindr/)
 
 ![Wireframe](assets/wireframeV2.png "Wireframe v2")
 
