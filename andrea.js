@@ -53,35 +53,6 @@ $(document).ready(function(){
     "https://www.wikihow-fun.com/images/thumb/b/bb/Pretend-to-Be-a-Wizard-Step-11-Version-2.jpg/aid540456-v4-728px-Pretend-to-Be-a-Wizard-Step-11-Version-2.jpg.webp"
 ]
 
-    //on.click functions
-    // $("#start-button").click(function(){
-    //     console.log("You clicked start!");
-    //     $("#home-page").empty();   
-    //     generateName();
-    // })
-
-    $("#new-button").click(function(){
-        console.log("You clicked new character!")
-        $("#user-stats").empty();
-        generateName();
-        $("#play-button").attr("style", "display: initial");
-
-        $("#user-image").empty();
-        var imageLength = imagearray.length;
-    
-        var randomimage = Math.floor(Math.random() * imageLength);
-    
-        var imgDiv = $("<div>");
-        var image = $("<img>").attr("style", "max-width: 400px");
-    
-        image.attr("src", imagearray[randomimage]);
-    
-        imgDiv.append(image);
-    
-        $("#user-image").prepend(imgDiv);
-    })
-
-
     //TEMPORARY
     $.ajax({
         url: queryURL,
@@ -178,56 +149,29 @@ $(document).ready(function(){
     }
 
     //FUNCTION CALLS
-hideStart();
+    hideStart();
+
+
+    $("#new-button").click(function(){
+        console.log("You clicked new character!")
+        $("#user-stats").empty();
+        generateName();
+        $("#play-button").attr("style", "display: initial");
+
+        $("#user-image").empty();
+        var imageLength = imagearray.length;
+
+        var randomimage = Math.floor(Math.random() * imageLength);
+
+        var imgDiv = $("<div>");
+        var image = $("<img>").attr("style", "max-width: 400px");
+
+        image.attr("src", imagearray[randomimage]);
+
+        imgDiv.append(image);
+
+        $("#user-image").prepend(imgDiv);
+    })
 
 })
 
-
-
-
-// // start
-// $("button", "#start-button").on("click", function () {
-//     // $("#user-image").empty();
-//     var imageLength = imagearray.length;
-
-//     var randomimage = Math.floor(Math.random() * imageLength);
-
-//     var imgDiv = $("<div>");
-//     var image = $("<img>");
-
-//     image.attr("src", imagearray[randomimage]);
-
-//     imgDiv.append(image);
-
-//     $("#wizard-image").prepend(imgDiv);
-// })
-// // new char
-// $("#new-button").click(function () {
-//     $("#user-image").empty();
-//     var imageLength = imagearray.length;
-
-//     var randomimage = Math.floor(Math.random() * imageLength);
-
-//     var imgDiv = $("<div>");
-//     var image = $("<img>");
-
-//     image.attr("src", imagearray[randomimage]);
-
-//     imgDiv.append(image);
-
-//     $("#user-image").prepend(imgDiv);
-// })
-// // start page image
-// var imageLength = imagearray.length;
-
-// var randomimage = Math.floor(Math.random() * imageLength);
-
-// var imgDiv = $("<div>");
-// var image = $("<img>");
-
-// image.attr("src", imagearray[randomimage]);
-
-// imgDiv.append(image);
-
-// $("#user-image").prepend(imgDiv);
-// //
