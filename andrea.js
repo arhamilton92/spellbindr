@@ -199,6 +199,7 @@ $(document).ready(function () {
   function hideStart() {
     $("#play-button").attr("style", "display: none");
   }
+  var character = generateCharacter.val
 
   //FUNCTION CALLS
   hideStart();
@@ -231,6 +232,7 @@ $(document).ready(function () {
       $("#game-page").attr("style", "display: block")
       $("#save-page").attr("style", "display: block")
       $("#dungeon-date").attr("style", "display: block")
+      localStorage.setItem("character", JSON.stringify(character))
 
 
 
@@ -241,7 +243,7 @@ $(document).ready(function () {
   })
   //Yes button
   $("#yes-button").click(function(){
-    console.log("He said YES!!")
+    console.log("They said YES!!")
 })
 
 });
