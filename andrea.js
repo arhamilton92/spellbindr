@@ -1,10 +1,9 @@
 $(document).ready(function () {
 //VARIABLES
-var queryURL = "https://www.dnd5eapi.co/api/";
+var dndURL = "https://www.dnd5eapi.co/api/";
 var magicSchoolsURL = "https://www.dnd5eapi.co/api/magic-schools";
 var equipmentURL = "https://www.dnd5eapi.co/api/equipment/";
 var spellsURL = "https://www.dnd5eapi.co/api/spells/";
-
 var pickupLineURL = "http://pebble-pickup.herokuapp.com/tweets/random";
 
 var magicSchool = "";
@@ -49,24 +48,21 @@ var imagearray = [
 ];
 
 //TEMPORARY
-$.ajax({
-url: queryURL,
-method: "GET",
-}).then(function (response) {
-    console.log(response);
-});
-//
+// $.ajax({
+// url: dnd,
+// method: "GET",
+// }).then(function (response) {
+//     console.log(response);
+// });
+// //
 
 //FUNCTION DEFINITIONS
-function generateName() {
-    // console.log("generateName")
-    firstName =
-        firstnameArray[Math.floor(Math.random() * firstnameArray.length)];
+function getName() {
+    firstName = firstnameArray[Math.floor(Math.random() * firstnameArray.length)];
     lastName = lastnameArray[Math.floor(Math.random() * lastnameArray.length)];
 }
 
-function generateStats() {
-// console.log("generateStats")
+function getStats() {
 $.ajax({
     url: magicSchoolsURL,
     method: "GET",
@@ -97,6 +93,7 @@ $.ajax({
 }
 
 function generateCharacter() {
+    //uses character info to create and append elements to page
     var nameDiv = $("<h4>").text(firstName + " " + lastName);
     var magicDiv = $("<div>").text("Magic school: " + magicSchool);
     var equipmentDiv = $("<div>").text("Equipment: ");
@@ -107,11 +104,10 @@ function generateCharacter() {
     var spell1El = $("<span>").text(spell1);
     var spell2El = $("<span>").text(spell2);
     spellDiv.append(spell1El, spell2El);
-
     $("#user-stats").append(nameDiv, magicDiv, equipmentDiv, spellDiv);
 }
 
-function generatePickupLine() {
+function getPickupLine() {
     $.ajax({
         url: pickupLineURL,
         method: "GET",
@@ -130,7 +126,6 @@ function generateImage() {
     var randomimage = Math.floor(Math.random() * imageLength);
     var imgDiv = $("<div>");
     var image = $("<img>").attr("style", "max-width: 400px");
-
     image.attr("src", imagearray[randomimage]);
     imgDiv.append(image);
     $("#user-image").prepend(imgDiv);
@@ -143,13 +138,13 @@ hideStart();
 $("#new-button").click(function () {
     $("#user-stats").empty();
     $("#play-button").attr("style", "display: initial");
-    generateName();
-    generateStats();
-    generatePickupLine();
-    generateCharacter();
+    //get functions retrieve character info. generate function appends to page.
+    getName();
+    getStats();
+    getPickupLine();
     generateImage();
+    generateCharacter();
 });
-
 
 //play game button to go to next page and save character to local
 $("#play-button").click(function(){
@@ -157,21 +152,24 @@ $("#play-button").click(function(){
     $("#game-page").attr("style", "display: block")
     $("#save-page").attr("style", "display: block")
     $("#dungeon-date").attr("style", "display: block")
-    generateName();
-    generateStats();
-    generatePickupLine();
-    generateCharacter();
+    //get functions retrieve character info. generate function appends to page.
+    getName();
+    getStats();
+    getPickupLine();
     generateImage();
+    generateCharacter();
 })
+
 //Flee button
 $("#flee-button").click(function(){
     console.log("you coward!")
     $("#user-stats").empty();
-    generateName();
-    generateStats();
-    generatePickupLine();
-    generateCharacter();
+    //get functions retrieve character info. generate functions appends to page.
+    getName();
+    getStats();
+    getPickupLine();
     generateImage();
+    generateCharacter();
 })
 
 //Yes button
