@@ -107,6 +107,8 @@ function generateCharacter() {
     $("#user-stats").append(nameDiv, magicDiv, equipmentDiv, spellDiv);
 }
 
+
+
 function getPickupLine() {
     $.ajax({
         url: pickupLineURL,
