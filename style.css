@@ -1,41 +1,64 @@
 *{
 
-    font-family: 'Amatic SC', cursive;
-    }
-    
-    #home-page{
-        text-align: center;
-        margin-top: 40px;
-    }
-    
-    h1{
-        font-size: 90px;
-    }
-    
-    p{
-        font-size:40px;
-    }
-    
-    button{
-        height:50px;
-        width:150px;
-      
-    }
-    
-    #user-page{
-        text-align: center;
-    }
-    
-    #game-page{
-        text-align: center;
-        margin-top: 40px;
-    }
-    
-    #saved-page{
-        text-align:center;
-        margin-top: 40px;
-    }
-    
-    #play-button{
-        display: none;
-    }
+font-family: 'Amatic SC', cursive;
+}
+body{
+    background-color: lightgray;
+}
+#home-page{
+    text-align: center;
+    margin-top: 40px;
+}
+
+h1{
+    font-size: 90px;
+}
+
+p{
+    font-size:40px;
+}
+
+button{
+    height:50px;
+    width:150px;
+}
+
+#user-page{
+    text-align: center;
+}
+
+#game-page{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#saved-page{
+    text-align:center;
+    margin-top: 40px;
+}
+
+#play-button{
+    display: none;
+}
+.button5{
+    border-radius: 50%;
+}
+#new-button , #flee-button{
+    background-color:#e7a34b;
+}
+#new-button:hover, #flee-button:hover{
+    box-shadow : 0px 0px 1px 8px orange;
+}
+#play-button , #yes-button{
+    background-color:#46d246;
+}
+#play-button:hover , #yes-button:hover{
+    box-shadow : 0px 0px 1px 8px #00cc00;
+}
+#save-wizard:hover{
+    box-shadow : 0px 0px 1px 8px #1a1aff;
+}
+#dungeon-date{
+    /* background-image: url() ; */
+    text-align:center;
+}
