@@ -1,4 +1,3 @@
-// <<<<<<< HEAD
 // var imagearray = ["https://cdn.pixabay.com/photo/2019/08/19/23/27/wizard-4417430__340.png",
 //     "https://cdn.pixabay.com/photo/2019/08/20/00/17/wizard-4417511__340.png",
 //     "https://cdn.pixabay.com/photo/2020/02/14/06/07/wizard-4847575__340.png",
