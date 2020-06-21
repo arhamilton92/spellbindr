@@ -63,15 +63,14 @@
     <!--  Game Character Content -->
     <div class="container" id="game-page" style="display: none;">
         <div class="row">
-            <div class="col-sm-12" id="wizard-image">
+            <div class="col-sm-12" id="user-image">
                 <!-- user image  -->
                 <p>Image</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12" id="user-stats">
                 <!-- Wizard Stats -->
-                <p>Stats</p>
             </div>
         </div>
         <div class="row">
@@ -105,6 +104,42 @@
                                 <!-- Save Wizard button -->
                                 <button type="button" class="btn btn-primary button5" id="save-wizard">Save
                                     Wizard</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" id="flee-button">I shall not</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" id="yes-button" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Yes
+                        </button>
+
+
+                        <!-- Modal for showing wizard pickup line -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Match Successful</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <!-- Wizard Pickup Line-->
+                                    <div class="modal-body" id="wizard-pickup-line">
+                                        <!-- pickup line here -->
+                                        <p>Pickup Line</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <!-- Save Wizard button -->
+                                        <button type="button" class="btn btn-primary" id="save-wizard">Save Wizard</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
