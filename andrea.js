@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //VARIABLES
+ //VARIABLES
     var dndURL = "https://www.dnd5eapi.co/api/";
     var magicSchoolsURL = "https://www.dnd5eapi.co/api/magic-schools";
     var equipmentURL = "https://www.dnd5eapi.co/api/equipment/";
@@ -199,13 +199,3 @@ $(document).ready(function () {
     }
   });
     })
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
