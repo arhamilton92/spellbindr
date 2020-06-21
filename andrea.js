@@ -4,9 +4,9 @@ $(document).ready(function () {
   var magicSchoolsURL = "https://www.dnd5eapi.co/api/magic-schools";
   var equipmentURL = "https://www.dnd5eapi.co/api/equipment/";
   var spellsURL = "https://www.dnd5eapi.co/api/spells/";
-
   var pickupLineURL = "http://pebble-pickup.herokuapp.com/tweets/random";
-
+  
+  var pickupResponse = ""
   var magicSchool = "";
   var index = "";
   var index2 = "";
@@ -114,7 +114,6 @@ $(document).ready(function () {
   }).then(function (response) {
     console.log(response);
   });
-  //
 
   //FUNCTION DEFINITIONS
   function generateName() {
@@ -186,6 +185,7 @@ $(document).ready(function () {
 
     $("#user-stats").append(nameDiv, magicDiv, equipmentDiv, spellDiv);
   }
+ 
 
   function generatePickupLine() {
     $.ajax({
@@ -193,13 +193,15 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (response) {
       console.log(response.tweet);
+      pickupResponse=response.tweet
+
     });
-  }
+}
 
   function hideStart() {
     $("#play-button").attr("style", "display: none");
   }
-  var character = generateCharacter.val
+
 
   //FUNCTION CALLS
   hideStart();
@@ -226,24 +228,42 @@ $(document).ready(function () {
     $("#user-image").prepend(imgDiv);
   });
   //play game button to go to next page and save character to local
-  $("#play-button").click(function(){
-      console.log("you clicked play game")
-      $("#user-page").empty()
-      $("#game-page").attr("style", "display: block")
-      $("#save-page").attr("style", "display: block")
-      $("#dungeon-date").attr("style", "display: block")
-      localStorage.setItem("character", JSON.stringify(character))
+  $("#play-button").click(function () {
+    console.log("you clicked play game");
+    $("#user-page").empty();
+    $("#game-page").attr("style", "display: block");
+    $("#save-page").attr("style", "display: block");
+    $("#dungeon-date").attr("style", "display: block");
+    // localStorage.setItem("character", JSON.stringify(character));
 
-
-
-  })
+    // character = JSON.parse(localStorage.getItem("character")) || [];
+    // $("#savedSearch").empty();
+  });
   //Flee button
-  $("#flee-button").click(function(){
-      console.log("you coward!")
-  })
+  $("#flee-button").click(function () {
+    console.log("you coward!");
+  });
   //Yes button
-  $("#yes-button").click(function(){
-    console.log("They said YES!!")
-})
-
+  $("#yes-button").click(function () {
+    $("#exampleModalLabel").empty();
+    $("#pickup-line").empty();
+    //   generatePickupLine()
+    //function to roll a d20 for matching with wizard
+    var d20 = Math.floor(Math.random() * 20);
+    if (d20 > 6){
+        console.log("success")
+        
+        $("#exampleModalLabel").append("Successful roll!");
+        $("#pickup-line").append(pickupResponse);    
+    } else {
+        console.log("failure")
+        
+        $("#exampleModalLabel").append("Failed roll!")
+        $("#pickup-line").append("Your luck is too low. Try with another wizard.")
+    }
+  });
+  //Save Wizard button
+  $("#save-wizard").click(function () {
+    console.log("save your wizard!");
+  });
 });
