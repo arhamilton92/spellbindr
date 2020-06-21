@@ -48,9 +48,64 @@
                     <div class="col">
                     <button type="button" class="btn btn-primary mt-3" id="play-button">Play Game</button>
                     </div>
-                </div>
+                </div>          
 
-              
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" id="flee-button">I shall not</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" id="yes-button" data-toggle="modal"
+                            data-target="#exampleModal">
+                            Yes
+                        </button>
+
+
+                        <!-- Modal for showing wizard pickup line -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Match Successful</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <!-- Wizard Pickup Line-->
+                                    <div class="modal-body" id="wizard-pickup-line">
+                                        <!-- pickup line here -->
+                                        <p>Pickup Line</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <!-- Save Wizard button -->
+                                        <button type="button" class="btn btn-primary" id="save-wizard">Save Wizard</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- After clicking save show saved wizards screen -->
+    <div class="container" id="saved-page">
+        <div class="row">
+            <div class="col-sm-12" id="saved-matches">
+                <h2>Saved Matches</h2>
+                <!-- add saved matches-->
+            </div>
+        </div>
+    </div>
+
+    <!-- Dungeon Date -->
+    <div class ="container date">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Dungeon Date</h2>
+                <p>..........</p>
+                <button type = "button"></button>
+            </div>
+        </div>
 
             </div>
         </div>

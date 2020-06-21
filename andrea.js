@@ -164,16 +164,20 @@ $(document).ready(function(){
         $("#user-image").prepend(imgDiv);
     }
 
+    function testFunction() {
+        console.log('test function working');
+    }
+
     //FUNCTION CALLS
     hideStart();
 
     $("#new-button").click(function(){
+        event.preventDefault();
         console.log("You clicked new character!")
         $("#user-stats").empty();
         generatePicture();
         generateName();
         $("#play-button").attr("style", "display: initial");
-
     })
 
 })
