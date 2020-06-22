@@ -89,11 +89,6 @@ Always wanted to nerd out on D&D but don't have the time? Learn some of the basi
 
 [Deployed Website](https://arhamilton92.github.io/spellbindr/)
 
-## Wireframe
-![Wireframe](assets/wireframeV2.png "Wireframe v2")
-
-
-
 ## Credits
 Credits to the project members: Andrea Hamilton(arhamilton92), Mark Mooney(mjmoon15), Preston Bradford(YukariTalksTanks), and Sharon Kim(sharonkim09).
 
