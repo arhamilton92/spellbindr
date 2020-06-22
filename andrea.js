@@ -13,7 +13,7 @@ $(document).ready(function () {
     var spell2 = "";
     var equipment1 = "";
     var equipment2 = "";
-    var randomNumber = "";
+    var randomNumber = "0";
 
     var nameDiv = "";
     var magicDiv = "";
@@ -25,6 +25,8 @@ $(document).ready(function () {
     var spell2El = "";
     var pickupResponse = "";
     var pickupEl = "";
+    var partyNumber = "0";
+    var numberOfMembers = "0";
 
     var savedWizardImage = "";
     var savedWizardFirstName = "";
@@ -175,21 +177,68 @@ $(document).ready(function () {
         wizardNumber = localStorage.getItem("wizardNumber");
         console.log(wizardNumber)
 
-        for (var i = 1; i < wizardNumber; i++){
-            console.log(i);
-            randomNumber = localStorage.getItem("wizardImage" + i)
+        for (var i = 0; i <= wizardNumber; i++){
+            firstName = localStorage.getItem("wizardFirstName" + i)
+            lastName = localStorage.getItem("wizardLastName" + i)
+            if (firstName !== null) {
+
+                wizardRow = $("<div>").attr("class", "row border").attr("id", i)
+                savedWizardFirstName = $("<div>").text(firstName).attr("class", "col-sm-4").attr("id", "firstName" + i);
+                savedWizardLastName = $("<div>").text(lastName).attr("class", "col-sm-4").attr("id", "lastName" + i);
+                buttonDiv = $("<div>").attr("class", "col-sm-4").attr("id", i).append($("<button>").text("Go on a Date").attr("data-toggle", "modal").attr("data-target", "#date").attr("class", "btn btn-outline-danger go-on-date").attr("id", i));
+
+                wizardRow.append(savedWizardFirstName, savedWizardLastName, buttonDiv)
+                $("#wizards-for-later").append(wizardRow)
+            }
+        }
+    }
+
+    function addToParty() {
+        $("#wizards-in-party").empty();
+        partyNumber = localStorage.getItem("partyNumber");
+
+        for (var i = 0; i <= partyNumber; i++){
+            firstName = localStorage.getItem("partyFirstName" + i)
+            lastName = localStorage.getItem("partyLastName" + i)
+            if (firstName !== null) {
+
+                wizardRow = $("<div>").attr("class", "row border")
+                savedWizardFirstName = $("<div>").text(firstName).attr("class", "col-sm-4")
+                savedWizardLastName = $("<div>").text(lastName).attr("class", "col-sm-4")
+                buttonDiv = $("<div>").attr("class", "col-sm-4").append($("<button>").text("Send Message").attr("data-toggle", "modal").attr("data-target", "#date").attr("class", "btn btn-outline-danger go-on-date").attr("id", i ));
+
+                wizardRow.append(savedWizardFirstName, savedWizardLastName, buttonDiv)
+                $("#wizards-in-party").append(wizardRow)
+            }
+        }
+    } 
+
+    function storeParty() {
+        console.log('storeparty');
+            console.log(partyNumber);
+            numberOfMembers = localStorage.getItem("partyNumber");
+            if (numberOfMembers !== null) {
+                partyNumber = numberOfMembers
+            }
+            
             firstName = localStorage.getItem("wizardFirstName" + i)
             lastName = localStorage.getItem("wizardLastName" + i)
 
-            wizardRow = $("<div>").attr("class", "row border")
-            savedWizardImage = $("<img>").attr("style", "max-width: 100px").attr("src", imagearray[randomNumber]).attr("class", "col-sm-1")
-            savedWizardFirstName = $("<div>").text(firstName).attr("class", "col-sm-3");
-            savedWizardLastName = $("<div>").text(lastName).attr("class", "col-sm-3");
-
-            wizardRow.append(savedWizardImage, savedWizardFirstName, savedWizardLastName)
-            $("#wizards-for-later").append(wizardRow)
+            partyNumber++;
+            localStorage.setItem("partyNumber", partyNumber);
+            localStorage.setItem("partyFirstName" + i, firstName);
+            localStorage.setItem("partyLastName" + i, lastName);
         }
+
+    function removeFromMatches() {
+        localStorage.removeItem("wizardImage" + i,);
+        localStorage.removeItem("wizardFirstName" + i,);
+        localStorage.removeItem("wizardLastName" + i,);
+        addToMatches();
     }
+
+
+    // data-toggle="modal" data-target="#charismaModal
 
     //FUNCTION CALLS
     $("#user-stats").empty();
@@ -213,11 +262,14 @@ $(document).ready(function () {
         $("#game-page").attr("style", "display: block");
         $("#save-page").attr("style", "display: block");
         $("#dungeon-date").attr("style", "display: block");
+        $("#party").attr("style", "display: block");
+        $("#home-page").attr("style", "display: none");
         //get functions retrieve character info. generate function appends to page.
         storeCharacter();
         // getWizard();
         newWizard();
         $("#pickup").text(pickupResponse);
+        addToParty();
     });
 
     $(".modalbutton").click(function () {
@@ -238,8 +290,9 @@ $(document).ready(function () {
     $(".modal-complete").click(function () {
         $("#user-stats").empty();
         //get functions retrieve character info. generate functions appends to page.
-        newWizard();
         addToMatches();
+        newWizard();
+        addToParty();
     });
 
     //Roll Charisma button
@@ -264,5 +317,24 @@ $(document).ready(function () {
             pickupEl = $("<div>").text("Your charisma is too low. Try with another wizard.")
             $(".pickup2").append(pickupEl);
         }
+    })
+
+    $(".go-on-date").click(function () {
+        var d20 = Math.floor(Math.random() * 20);
+        console.log('you clicked addtoparty!')
+        i = ($(this).attr('id'));
+
+        if (d20 > 12) {
+            $(".date-title").text("Success! You had a good time.");
+            $(".datetext").text('He wants to join your party!');
+            $(".add-party").text("Add to Party");
+            storeParty();
+            addToParty();
+            removeFromMatches();
+            } else {
+            $(".date-title").text("Failure. That date went poorly.");
+            $(".datetext").text("He doesn't want to join your party right now. You can try again later!");
+            $(".add-party").text("Aw. Ok");
+            }
     })
 })

@@ -28,7 +28,7 @@
             partner! </p>
         <!-- <button type="button" class="btn btn-primary" id="start-button">Start</button> -->
     </div>
-
+    
     <!--  User Character Content -->
     <div class="container" id="user-page">
         <div class="row">
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-
+    
     <!--  Game Character Content -->
     <div class="container" id="game-page" style="display: none;">
         <div class="row">
@@ -75,25 +75,34 @@
                 <div class="row">
                     <div class="col-sm-12 mt-3 mb-3">
                         <button type="button" class="btn btn-primary button5" id="flee-button">Seek Further</button>
-                        <button type="button" class="btn btn-primary button5 sendBtn modalbutton" data-toggle="modal"
-                            data-target="#charismaModal">Send a Message</button>
+                        <button type="button" class="btn btn-primary button5 sendBtn modalbutton" data-toggle="modal" data-target="#charismaModal">Send a Message</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Dungeon Date -->
+    
     <div class="container" style="display: none;" id="dungeon-date">
         <div class="row">
-            <div class="col-sm-12">
-                <h2>Dungeon Date</h2>
+            <div class="col-sm-6 border-right">
+                <h2 class="m-4">Matches</h2>
                 <div id="wizards-for-later">
+                </div>
+            </div>
+            <div class="col-sm-6 border-left">
+                <h2 class="m-4">Party</h2>
+                <div id="wizards-in-party">
+                    <div class="row border">
+                        <div class="col-sm-12">
+                            Go on dates to add to your Party!
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
+    
     <!--modals-->
     <div class="modal" id="charismaModal">
         <div class="modal-dialog">
@@ -104,7 +113,7 @@
                 </div>
                 <div class="container"></div>
                 <div class="modal-body pickup">
-
+                
                 </div>
                 <div class="modal-footer">
                     <a data-toggle="modal" href="#myModal2" data-dismiss="modal"
@@ -122,7 +131,7 @@
                 </div>
                 <div class="container"></div>
                 <div class="modal-body pickup2">
-
+                
                 </div>
                 <div class="modal-footer">
                     <a href="#" data-dismiss="modal" class="btn btn-outline-primary modal-complete">Close</a>
@@ -130,7 +139,24 @@
             </div>
         </div>
     </div>
-
+    <div class="modal" id="date" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="date-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="container"></div>
+                <div class="modal-body datetext">
+                
+                </div>
+                <div class="modal-footer">
+                    <a href="#" data-dismiss="modal" class="btn btn-outline-primary add-party">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!--scripts-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"

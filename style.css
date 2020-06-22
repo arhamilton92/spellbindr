@@ -1,6 +1,11 @@
 * {
     font-family: "Amatic SC", cursive;
   }
+
+.btn-outline-danger {
+    background-color: black;
+}
+
   body {
     background-image: url(https://images-na.ssl-images-amazon.com/images/I/61uFNO1OkzL._AC_SL1000_.jpg);
     background-position: center;
@@ -71,6 +76,7 @@
     color: white;
     font-size: 25px;
   }
+  #wizards-in-party,
   #wizards-for-later{
     font-size: 25px;
     text-align:center;
