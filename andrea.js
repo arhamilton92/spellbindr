@@ -4,7 +4,7 @@ $(document).ready(function () {
     var magicSchoolsURL = "https://www.dnd5eapi.co/api/magic-schools";
     var equipmentURL = "https://www.dnd5eapi.co/api/equipment/";
     var spellsURL = "https://www.dnd5eapi.co/api/spells/";
-    var pickupLineURL = "http://pebble-pickup.herokuapp.com/tweets/random";
+    var pickupLineURL = "https://pebble-pickup.herokuapp.com/tweets/random";
 
     var magicSchool = "";
     var index = "";
@@ -137,7 +137,6 @@ $(document).ready(function () {
             localStorage.setItem("yourEquip2", equipment2);
             localStorage.setItem("yourSpell1", spell1);
             localStorage.setItem("yourSpell2", spell2);
-
         }
         function retrieveCharacter() {
             randomNumber = localStorage.getItem("yourImage");
