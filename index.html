@@ -75,125 +75,49 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <!-- <button type="button" class="btn btn-primary button5" id="flee-button">Flee</button> -->
-                <!-- Button trigger modal -->
-                <!-- <button type="button" class="btn btn-primary button5" id="yes-button" data-toggle="modal"
-                    data-target="#exampleModal">
-                    Yes
-                </button> -->
-​
-​
-​
-                <!-- Modal for showing wizard pickup line (use class successful) -->
-                <div class="modal fade" id="charismaModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Match Successful</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <!-- Wizard Pickup Line-->
-                            <div class="modal-body" id="pickup-line">
-                                <!-- pickup line here -->
-                                <p id="pickup"></p>
-                            </div>
-                            <div class="modal-footer">
-                                <!-- Save Wizard button -->
-                                <button type="button" class="btn btn-primary button5" id="roll-charisma">Roll Charisma</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                <!-- Modal for Successful Charisma Roll -->
-                <!-- <div class="modal fade" id="successModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Match Successful</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div> -->
-                            <!-- Wizard Pickup Line-->
-                            <!-- <div class="modal-body" id="pickup-line"> -->
-                                <!-- pickup line here -->
-                                <!-- <p id="pickup"></p>
-                            </div>
-                            <div class="modal-footer"> -->
-                                <!-- Save Wizard button -->
-                                <!-- <button type="button" class="btn btn-primary button5" id="save-wizard">OK</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>   -->
-​
-                <div class="row">
-                    <div class="col-sm-12">
-                        <button type="button" class="btn btn-primary" id="flee-button">Seek Further</button>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" id="try-this-one" data-toggle="modal"
-                            data-target="#exampleModal">
-                            Try this one
-                        </button>
-​
-​
-                        <!-- Modal for showing wizard pickup line
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Match Successful</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <!- Wizard Pickup Line -->
-                                    <!-- <div class="modal-body" id="wizard-pickup-line"> -->
-                                        <!-- pickup line here -->
-                                        <!-- <p>Pickup Line</p>
-                                    </div>
-                                    <div class="modal-footer"> -->
-                                        <!-- Save Wizard button -->
-                                        <!-- <button type="button" class="btn btn-primary" id="save-wizard">Save Wizard</button>
-                                    </div>
-                                </div>
-                            </div> -->
-                        <!-- </div> --> 
-                    </div>
-                </div>
+
+<div class="modal" id="charismaModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">You said:</h4>    
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div><div class="container"></div>
+            <div class="modal-body pickup">
+             
             </div>
+            <div class="modal-footer">
+              <a data-toggle="modal" href="#myModal2" data-dismiss="modal" class="btn btn-outline-primary charisma-roll">Roll Charisma!</a>
+            </div>
+          </div>
         </div>
-    </div>
+</div>
+
+<div class="modal" id="myModal2" data-backdrop="static">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title2"></h4>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div><div class="container"></div>
+            <div class="modal-body pickup2">
+            
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-dismiss="modal" class="btn btn-outline-primary add-match">Close</a>
+            </div>
+          </div>
+        </div>
+</div>
 ​
-​
-    <!-- Unsuccessful match close modal and reload wizard (use class unsuccessful)-->
-​
-    <!-- <div class="modal fade unsuccessful" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Match Unsuccessful</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-primary" id="flee-button">Seek Further</button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary modalbutton" data-toggle="modal" data-target="#charismaModal" >
+                        Send a Message
                     </button>
-                </div>
-                <div class="modal-body" id="wizard-pickup">
-                    <p>Match Unsuccessful</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="close-button"
-                        data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-​
+
 ​
     <!-- After clicking save show saved wizards screen -->
     <div class="container" id="saved-page" style="display: none;">
