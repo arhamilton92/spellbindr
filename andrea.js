@@ -26,7 +26,14 @@ var spell2El = "";
 var pickupResponse = "";
 var pickupEl = "";
 
-var numberOfWizards= "0";
+var savedWizardImage = "";
+var savedWizardFirstName = "";
+var savedWizardLastName = "";
+
+
+
+
+var numberOfWizards= 0;
 
 var firstnameArray = ["Oloril", "Sharry", "Fruamros", "Graamros", "Beleak", "Kevben", "Gandalf", "Dumbledore", "Harry", "Mervin",
     "Thicket", "Ruben", "Aedan", "Sorrel", "Wylie", "Briar", "Talon", "Ruben", "Gust", "Barney", "Leroy", "Fennel", "Quartz", "Wren",
@@ -143,6 +150,25 @@ function generateCharacter() {
     }
 //
 
+function storeWizard() {
+    wizardNumber = localStorage.getItem("wizardNumber");
+    if (wizardNumber !== null) {
+        numberOfWizards = wizardNumber
+    }
+    numberOfWizards++;
+    var i = numberOfWizards;
+    localStorage.setItem("wizardNumber", numberOfWizards);
+    localStorage.setItem("wizardImage" + i, randomNumber);
+    localStorage.setItem("wizardFirstName" + i, firstName);
+    localStorage.setItem("wizardLastName" + i, lastName);
+}
+
+function addToMatches() {
+    savedWizardImage = $("<img>").attr("style", "max-width: 100px")
+    savedWizardFirstName = $("<div").text(firstName);
+    savedWizardLastName = $("<div").text(lastName);
+}
+
 // function storeWizard() {
 //     numberOfWizards = (0 ++ )
 //     localStorage.setItem("wizardNumber", numberofWizards)
@@ -206,7 +232,6 @@ $(".modalbutton").click(function () {
     $(".pickup").empty();
     pickupEl = $("<div>").text(pickupResponse)
     $(".pickup").append(pickupEl);
-
 })
 
 //Flee button
@@ -217,8 +242,9 @@ $("#flee-button").click(function () {
     newWizard();
 });
 
-$(".add-match").click(function () {
+$(".modal-complete").click(function () {
     console.log("you coward!");
+    console.log("save gandalf!");
     $("#user-stats").empty();
     //get functions retrieve character info. generate functions appends to page.
     newWizard();
@@ -238,16 +264,28 @@ $(".charisma-roll").click(function () {
         $(".modal-title2").text("Success! He sent a message:");
         pickupEl = $("<div>").text(pickupResponse)
         $(".pickup2").append(pickupEl);
-        $(".add-match").text("Add to Matches");
+        $(".modal-complete").text("Add to Matches");
+        storeWizard();
+        $("#wizards-for-later").append(savedWizardImage, savedWizardFirstName, savedWizardLastName)
 
         } else {
         console.log("failure");
         $(".modal-title2").text("Failure. He didn't reply.");
-        $(".add-match").text("Ok");
+        $(".modal-complete").text("Ok");
         pickupEl = $("<div>").text("Your charisma is too low. Try with another wizard.")
         $(".pickup2").append(pickupEl);
     }
 });
+
+//Save this wizard for later
+// $("#saveWizardButton").click(function(){
+//     console.log("save gandalf!");
+//     storeWizard();
+//     pickupEl = $("<div>").text(pickupResponse)
+//         $("#pickup").append(pickupEl);
+//     $("#wizards-for-later").append(savedWizardImage, savedWizardFirstName, savedWizardLastName)
+// })
+
 
 });
 
