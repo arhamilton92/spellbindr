@@ -183,8 +183,8 @@ $(document).ready(function () {
 
             wizardRow = $("<div>").attr("class", "row border")
             savedWizardImage = $("<img>").attr("style", "max-width: 100px").attr("src", imagearray[randomNumber]).attr("class", "col-sm-1")
-            savedWizardFirstName = $("<div>").text(firstName).attr("class", "col-sm-1");
-            savedWizardLastName = $("<div>").text(lastName).attr("class", "col-sm-1");
+            savedWizardFirstName = $("<div>").text(firstName).attr("class", "col-sm-3");
+            savedWizardLastName = $("<div>").text(lastName).attr("class", "col-sm-3");
 
             wizardRow.append(savedWizardImage, savedWizardFirstName, savedWizardLastName)
             $("#wizards-for-later").append(wizardRow)

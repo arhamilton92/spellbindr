@@ -15,6 +15,10 @@
   }
   h1 {
     font-size: 90px;
+  } 
+  h2{
+    text-align:center;
+    color:white;
   }
   p {
     font-size: 40px;
@@ -53,14 +57,13 @@
   #yes-button:hover {
     box-shadow: 0px 0px 1px 8px #00cc00;
   }
-  #save-wizard:hover {
+  .sendBtn:hover {
     box-shadow: 0px 0px 1px 8px #1a1aff;
   }
-  /* #dungeon-date {
-    background-image: url(https://i.ytimg.com/vi/JbiF-SUHx28/maxresdefault.jpg);
-    background-position: center;
-    text-align: center;
-  } */
+  #dungeon-date {
+    color:white;
+    background: rgba(0,0,0,0.5);
+  }
   #user-stats {
     background: rgba(0, 0, 0, 0.5);
     float: none;
@@ -68,4 +71,7 @@
     color: white;
     font-size: 25px;
   }
-  
+  #wizards-for-later{
+    font-size: 25px;
+    text-align:center;
+  }
