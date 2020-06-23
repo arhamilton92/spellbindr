@@ -169,6 +169,7 @@ $(document).ready(function () {
         getPickupLine();
         generateImage();
         generateCharacter();
+        storeWizard();
     }
 
     function addToMatches() {
