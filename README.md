@@ -7,6 +7,7 @@ This was a team project built through the Georgia Tech Coding Bootcamp. This is 
 * [Installation](#installation)
 * [User-Story](#user-story)
 * [Acceptance Criteria](#acceptance-criteria)
+* [Usage](#usage)
 * [API](#api's)
 * [Elevator Pitch](#elevator-pitch)
 * [Links](#links)
@@ -76,6 +77,13 @@ THEN I roll charisma to go on a dungeon date
 WHEN the dungeon date is successful
 THEN the wizard joins my party and is removed from saved matches
 ```
+## Usage
+The following screenshots shows some functionality of the project:
+![ScreenShot](./assets/images/spellbindr-screenshot.png)
+![ScreenShot](./assets/images/sending-message.png)
+![ScreenShot](./assets/images/receiving-message.png)
+![ScreenShot](./assets/images/spellbindr-screenshot.png)
+
 ## API's 
   1. D&D
   2. Random pickup line
