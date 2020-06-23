@@ -82,7 +82,7 @@ The following screenshots shows some functionality of the project:
 ![ScreenShot](./assets/images/spellbindr-screenshot.png)
 ![ScreenShot](./assets/images/sending-message.png)
 ![ScreenShot](./assets/images/receiving-message.png)
-![ScreenShot](./assets/images/spellbindr-screenshot.png)
+![ScreenShot](./assets/images/go-on-date.png)
 
 ## API's 
   1. D&D
