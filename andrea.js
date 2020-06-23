@@ -169,7 +169,6 @@ $(document).ready(function () {
         getPickupLine();
         generateImage();
         generateCharacter();
-        storeWizard();
     }
 
     function addToMatches() {
@@ -266,6 +265,7 @@ $(document).ready(function () {
         $("#home-page").attr("style", "display: none");
         //get functions retrieve character info. generate function appends to page.
         storeCharacter();
+        addToParty();
         // getWizard();
         newWizard();
         $("#pickup").text(pickupResponse);
@@ -291,8 +291,8 @@ $(document).ready(function () {
         $("#user-stats").empty();
         //get functions retrieve character info. generate functions appends to page.
         addToMatches();
-        newWizard();
         addToParty();
+        newWizard();
     });
 
     //Roll Charisma button
